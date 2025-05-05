@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package user;
 
+option go_package = "grpc-course-protobuf/pb/user";
+
+
 service UserService {
     rpc CreateUser(User) returns (CreateResponse);
 }
@@ -23,4 +26,8 @@ message User {
     Address address = 6;
     repeated string educations = 7;
     string spouse_name = 8;
+}
+
+message CreateResponse {
+    string message = 1;
 }
